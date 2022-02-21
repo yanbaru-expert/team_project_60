@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "csv"
+
 email = "test@example.com"
 password = "password"
 
@@ -20,11 +22,7 @@ end
   ActiveRecord::Base.connection.execute("TRUNCATE TABLE #{table_name} RESTART IDENTITY CASCADE")
 end
 
-
-
-require "csv"
-
-CSV.foreach('db/csv_data/text_data.csv', headers: true) do |row|
+CSV.foreach("db/csv_data/text_data.csv", headers: true) do |row|
   Text.create!(
     genre: row["genre"],
     title: row["title"],
@@ -32,7 +30,7 @@ CSV.foreach('db/csv_data/text_data.csv', headers: true) do |row|
   )
 end
 
-CSV.foreach('db/csv_data/movie_data.csv', headers: true) do |row|
+CSV.foreach("db/csv_data/movie_data.csv", headers: true) do |row|
   Movie.create!(
     genre: row["genre"],
     title: row["title"],
