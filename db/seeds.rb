@@ -28,6 +28,7 @@ CSV.foreach("db/csv_data/text_data.csv", headers: true) do |row|
     title: row["title"],
     content: row["content"]
   )
+  puts "テキストの初期データインポートに成功しました。"
 end
 
 CSV.foreach("db/csv_data/movie_data.csv", headers: true) do |row|
@@ -36,4 +37,5 @@ CSV.foreach("db/csv_data/movie_data.csv", headers: true) do |row|
     title: row["title"],
     url: row["url"]
   )
+  puts "動画の初期データインポートに成功しました。"
 end
