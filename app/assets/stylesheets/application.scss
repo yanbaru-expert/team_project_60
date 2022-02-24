@@ -5,7 +5,7 @@
 
 /* 全体 */
 
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/bootstrap';
 
 .base-container {
   margin: 0 auto;
@@ -28,4 +28,8 @@
 
 .mw-xl {
   max-width: 1200px;
+}
+
+body {
+  padding-top: 56px;
 }
