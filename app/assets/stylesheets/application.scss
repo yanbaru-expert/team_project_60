@@ -41,3 +41,13 @@ body {
 .alert-alert {
   @extend .alert-danger;
 }
+h1{
+  text-align: center;
+  padding: 1rem;
+}
+
+.content-card {
+  height: 370px;
+  max-width: 376px;
+  margin: 0 auto;
+}
