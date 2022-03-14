@@ -4,7 +4,7 @@ module MoviesHelper
       src: url,
       frameborder: 0,
       allow: "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-      allowfullscreen: true,
+      allowfullscreen: true
     )
   end
 end
