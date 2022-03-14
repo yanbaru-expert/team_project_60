@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+  RAILS_GENRE_LIST = %w[basic git ruby rails]
   with_options presence: true do
     validates :genre
     validates :title
@@ -11,6 +12,6 @@ class Movie < ApplicationRecord
     git: 2,
     ruby: 3,
     rails: 4,
-    php: 5
+    php: 5,
   }
 end
