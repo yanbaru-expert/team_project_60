@@ -5,6 +5,13 @@ class Movie < ApplicationRecord
     validates :title
     validates :url
   end
+  
+  PHP_GENRE_LIST = %w[php].freeze
+  with_options presence: true do
+    validates :genre
+    validates :title
+    validates :url
+  end
 
   enum genre: {
     invisible: 0, # 非表示
