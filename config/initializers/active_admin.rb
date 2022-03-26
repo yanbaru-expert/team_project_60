@@ -1,4 +1,5 @@
 ActiveAdmin.setup do |config|
+  
   # == Site Title
   #
   # Set the title that is displayed on the main layout
@@ -215,7 +216,7 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
-
+  #
   # == CSV options
   #
   # Set the CSV builder separator
@@ -332,4 +333,5 @@ ActiveAdmin.setup do |config|
   # You can switch to using Webpacker here.
   #
   # config.use_webpacker = true
+  config.skip_before_action :authenticate_user!
 end

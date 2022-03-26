@@ -39,4 +39,9 @@ CSV.foreach("db/csv_data/movie_data.csv", headers: true) do |row|
   )
   puts "動画の初期データインポートに成功しました。"
 end
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+admin_email = "admin@example.com"
+AdminUser.find_or_create_by!(email: admine_email) do |adminuser|
+  adminuser.password = password
+  puts "管理ユーザーの初期データインポートに成功しました。"
+end
