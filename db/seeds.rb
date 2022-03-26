@@ -41,7 +41,7 @@ CSV.foreach("db/csv_data/movie_data.csv", headers: true) do |row|
 end
 
 admin_email = "admin@example.com"
-AdminUser.find_or_create_by!(email: admine_email) do |adminuser|
+AdminUser.find_or_create_by!(email: admin_email) do |adminuser|
   adminuser.password = password
   puts "管理ユーザーの初期データインポートに成功しました。"
 end
