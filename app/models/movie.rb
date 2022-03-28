@@ -5,7 +5,7 @@ class Movie < ApplicationRecord
     validates :title
     validates :url
   end
-  
+
   PHP_GENRE_LIST = %w[php].freeze
   with_options presence: true do
     validates :genre
