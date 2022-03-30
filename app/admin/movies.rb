@@ -4,17 +4,24 @@ ActiveAdmin.register Movie do
   index do
     selectable_column
     id_column
-    column :genre
+    column :genre, :Movie, &:genre_i18n
     column :title
     column :url
     column :created_at
     actions
   end
 
-  filter :genre
-  filter :encrypted_password
-  filter :url
-  filter :created_at
+  show do
+    attributes_table do
+      row :id
+      row :genre, :Movie, &:genre_i18n
+      row :title
+      row :content
+      row :created_at
+      row :updated_at
+    end
+    active_admin_comments
+  end
 
   form do |f|
     f.inputs do
