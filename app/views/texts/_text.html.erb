@@ -1,10 +1,12 @@
 <div class="col-12 col-md-6 col-lg-4">
   <div class="card content-card border-dark mb-3">
-    <img src="/assets/no_image.jpg" alt="Ruby/Rails テキスト教材">
-    <div class="card-body">
-      <button class="btn btn-secondary btn-block">読破済みにする</button>
-      <p class="card-text mt-3"><%= text.title %></p>
-      <p>【<%= text.genre_i18n %>】</p>
-    </div>
+  <%= link_to text_path(text.id) do %>
+    <div class="text_img"><img src="/assets/no_image.jpg" alt="Ruby/Rails テキスト教材"></div>
+      <div class="card-body">
+        <button class="btn btn-secondary btn-block">読破済みにする</button>
+        <p class="card-text mt-3"><%= text.title %></p>
+        <p>【<%= text.genre_i18n %>】</p>
+      </div>
+  <% end %>
   </div>
 </div>
