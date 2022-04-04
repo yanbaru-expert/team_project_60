@@ -9,4 +9,12 @@ module ApplicationHelper
       "mw-xl"
     end
   end
+
+  def page_title
+    if params[:genre] == "php"
+      "PHP 動画"
+    else
+      "Ruby/Rails 動画"
+    end
+  end
 end
