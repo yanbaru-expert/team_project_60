@@ -20,7 +20,7 @@ module ApplicationHelper
 
   def page_title_text
     if params[:genre] == "php"
-      "PHPテキスト教材ページ"
+      "PHPテキスト教材"
     else
       "Ruby/Rails テキスト教材"
     end
