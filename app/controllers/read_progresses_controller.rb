@@ -1,5 +1,5 @@
 class ReadProgressesController < ApplicationController
- def create
+  def create
     current_user.read_progresses.create!(text_id: params[:text_id])
     redirect_back(fallback_location: root_path)
   end

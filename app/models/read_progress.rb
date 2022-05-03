@@ -3,7 +3,7 @@ class ReadProgress < ApplicationRecord
   belongs_to :text
 
   validates :user_id, uniqueness: {
-                      scope: :text_id,
-                      message: "は読破済です",
-                    }
+    scope: :text_id,
+    message: "は読破済です"
+  }
 end
