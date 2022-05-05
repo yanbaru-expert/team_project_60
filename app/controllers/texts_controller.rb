@@ -5,6 +5,8 @@ class TextsController < ApplicationController
              else
                Text.where(genre: Text::RAILS_GENRE_LIST)
              end
+
+    @texts = Text.includes(:read_progresses)
   end
 
   def show
