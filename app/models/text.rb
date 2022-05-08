@@ -18,4 +18,10 @@ class Text < ApplicationRecord
     php: 5
   }
   RAILS_GENRE_LIST = %w[basic git ruby rails].freeze
+
+  has_many :read_progresses, dependent: :destroy
+
+  def read_progressed_by?(user)
+    read_progresses.any? { |read_progress| read_progress.user_id == user.id }
+  end
 end
