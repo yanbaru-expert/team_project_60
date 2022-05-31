@@ -3,9 +3,9 @@ class MoviesController < ApplicationController
 
   def index
     @movies = if params[:genre] == "php"
-        Movie.includes(:watch_progresses).where(genre: Movie::PHP_GENRE_LIST).page(params[:page]).per(PER_PAGE)
-      else
-        Movie.includes(:watch_progresses).where(genre: Movie::RAILS_GENRE_LIST).page(params[:page]).per(PER_PAGE)
-      end
+                Movie.includes(:watch_progresses).where(genre: Movie::PHP_GENRE_LIST).page(params[:page]).per(PER_PAGE)
+              else
+                Movie.includes(:watch_progresses).where(genre: Movie::RAILS_GENRE_LIST).page(params[:page]).per(PER_PAGE)
+              end
   end
 end
