@@ -21,4 +21,10 @@ class Movie < ApplicationRecord
     rails: 4,
     php: 5
   }
+
+  has_many :watch_progresses, dependent: :destroy
+
+  def watch_progressed_by?(user)
+    watch_progresses.any? { |watch_progress| watch_progress.user_id == user.id }
+  end
 end

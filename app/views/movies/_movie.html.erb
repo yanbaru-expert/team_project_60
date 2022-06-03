@@ -4,10 +4,12 @@
       <%= embed_youtube(movie.url) %>
     </div>
     <div class="card-body text-dark movie-body">
-      <p>
-        <object>
-          <a class="btn btn-secondary btn-block">読破済みにする</a>
-        </object>
+      <p id="movie-<%= movie.id %>">
+        <% if movie.watch_progressed_by?(current_user) %>
+          <%= render "watchprogress", movie: movie %>
+        <% else %>
+          <%= render "unwatchprogress", movie: movie %>
+        <% end %>
       </p>
       <p class="card-text mt-3">Lv.<%= @movies.offset_value + movie_counter + 1 %>：<%= movie.title %></p>
     </div>
